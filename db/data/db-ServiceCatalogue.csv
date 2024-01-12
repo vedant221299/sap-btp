@@ -1,0 +1,21 @@
+id,ServiceParameter
+10,Firm
+11,Fallback
+12,Annual Turnover Quantity
+13,Annual Volume Deficiency
+14,Authorized Volume
+15,Commodity Charge
+16,Allocation Profile
+17,Rank
+18,DCQ
+19,MDCQ
+20,MCQ
+21,Fuel Provider
+22,Fuel%
+23,AACQ
+24,Overrun allowed
+25,Underrun allowed
+26,Take or pay
+27,Early Termination Charges
+28,Payment or Late Payment Charges
+29,Rate Class

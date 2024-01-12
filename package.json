@@ -1,0 +1,68 @@
+{
+  "name": "gmsconfig",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": {
+    "type": "git",
+    "url": "<Add your repository here>"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap-cloud-sdk/connectivity": "^3.10.0",
+    "@sap-cloud-sdk/http-client": "^3.10.0",
+    "@sap-cloud-sdk/resilience": "^3.10.0",
+    "@sap/cds": "^7",
+    "@sap/cds-dk": "^7.5.0",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1",
+    "@sap/ux-specification": "^1.120.1"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-project1": "cds watch --open project1/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "cds": {
+    "requires": {
+      "ZGMS_VALUE_HELP_SRV": {
+        "kind": "odata-v2",
+        "model": "srv/external/ZGMS_VALUE_HELP_SRV",
+        "[production]": {
+          "credentials": {
+            "destination": "ingenxserver",
+            "path": "/sap/opu/odata/sap/ZGMS_VALUE_HELP_SRV"
+          }
+        },
+        "[development]": {
+          "credentials": {
+            "destination": "SandboxPo",
+            "path": "/sap/opu/odata/sap/ZGMS_VALUE_HELP_SRV"
+          }
+        }
+      },
+      "ZAPI_SALES_CONTRACT_SRV": {
+        "kind": "odata-v2",
+        "model": "srv/external/ZAPI_SALES_CONTRACT_SRV",
+        "csrf": true,
+        "csrfInBatch": true,
+        "[production]": {
+          "credentials": {
+            "destination": "ingxserv",
+            "path": "/sap/opu/odata/sap/API_SALES_CONTRACT_SRV"
+          }
+        },
+        "[development]": {
+          "credentials": {
+            "destination": "SandboxPo",
+            "path": "/sap/opu/odata/sap/API_SALES_CONTRACT_SRV"
+          }
+        }
+      }
+    }
+  },
+  "main": "index.js",
+  "author": ""
+}

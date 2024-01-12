@@ -1,0 +1,398 @@
+<edmx:Edmx Version="4.0">
+<edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+<edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+</edmx:Reference>
+<edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+<edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+</edmx:Reference>
+<edmx:DataServices>
+<Schema Namespace="Catelog">
+<EntityContainer Name="EntityContainer">
+<EntitySet Name="ServiceCatalogue" EntityType="Catelog.ServiceCatalogue"/>
+<EntitySet Name="Profile" EntityType="Catelog.Profile"/>
+<EntitySet Name="Contract_TypeSet" EntityType="Catelog.Contract_TypeSet"/>
+<EntitySet Name="Storage_LocSet" EntityType="Catelog.Storage_LocSet"/>
+<EntitySet Name="TransportSet" EntityType="Catelog.TransportSet"/>
+<EntitySet Name="UOMSet" EntityType="Catelog.UOMSet"/>
+<EntitySet Name="Sales_OrgSet" EntityType="Catelog.Sales_OrgSet"/>
+<EntitySet Name="Ship_To_PartySet" EntityType="Catelog.Ship_To_PartySet"/>
+<EntitySet Name="Sold_To_PartySet" EntityType="Catelog.Sold_To_PartySet"/>
+<EntitySet Name="MaterialSet" EntityType="Catelog.MaterialSet"/>
+<EntitySet Name="PlantSet" EntityType="Catelog.PlantSet"/>
+<EntitySet Name="Sales_ContractSet" EntityType="Catelog.Sales_ContractSet"/>
+<EntitySet Name="LocationPointSet" EntityType="Catelog.LocationPointSet"/>
+<EntitySet Name="DivisionSet" EntityType="Catelog.DivisionSet"/>
+<EntitySet Name="Dist_ChannelSet" EntityType="Catelog.Dist_ChannelSet"/>
+<EntitySet Name="LocationSet" EntityType="Catelog.LocationSet"/>
+<EntitySet Name="A_SalesContract" EntityType="Catelog.A_SalesContract">
+<NavigationPropertyBinding Path="to_Item" Target="A_SalesContractItem"/>
+<NavigationPropertyBinding Path="to_Partner" Target="A_SalesContractPartner"/>
+<NavigationPropertyBinding Path="to_PricingElement" Target="A_SalesContractPrcgElmnt"/>
+</EntitySet>
+<EntitySet Name="A_SalesContractItem" EntityType="Catelog.A_SalesContractItem">
+<NavigationPropertyBinding Path="to_Partner" Target="A_SalesContractItemPartner"/>
+<NavigationPropertyBinding Path="to_PricingElement" Target="A_SalesContractItemPrcgElmnt"/>
+<NavigationPropertyBinding Path="to_SalesContract" Target="A_SalesContract"/>
+</EntitySet>
+<EntitySet Name="A_SalesContractItemPartner" EntityType="Catelog.A_SalesContractItemPartner">
+<NavigationPropertyBinding Path="to_SalesContract" Target="A_SalesContract"/>
+<NavigationPropertyBinding Path="to_SalesContractItem" Target="A_SalesContractItem"/>
+</EntitySet>
+<EntitySet Name="A_SalesContractItemPrcgElmnt" EntityType="Catelog.A_SalesContractItemPrcgElmnt">
+<NavigationPropertyBinding Path="to_SalesContract" Target="A_SalesContract"/>
+<NavigationPropertyBinding Path="to_SalesContractItem" Target="A_SalesContractItem"/>
+</EntitySet>
+<EntitySet Name="A_SalesContractPartner" EntityType="Catelog.A_SalesContractPartner">
+<NavigationPropertyBinding Path="to_SalesContract" Target="A_SalesContract"/>
+</EntitySet>
+<EntitySet Name="A_SalesContractPrcgElmnt" EntityType="Catelog.A_SalesContractPrcgElmnt">
+<NavigationPropertyBinding Path="to_SalesContract" Target="A_SalesContract"/>
+</EntitySet>
+</EntityContainer>
+<EntityType Name="ServiceCatalogue">
+<Key>
+<PropertyRef Name="id"/>
+</Key>
+<Property Name="id" Type="Edm.String" Nullable="false"/>
+<Property Name="ServiceParameter" Type="Edm.String"/>
+</EntityType>
+<EntityType Name="Profile">
+<Property Name="Pname" Type="Edm.String"/>
+<Property Name="Service_Parameter" Type="Edm.String"/>
+<Property Name="ID" Type="Edm.String"/>
+<Property Name="Parent_ID" Type="Edm.String"/>
+<Property Name="Contract_Relevant" Type="Edm.Boolean"/>
+<Property Name="Quantity_Parameter" Type="Edm.Boolean"/>
+<Property Name="Threshold_Relevance" Type="Edm.Boolean"/>
+<Property Name="Referrence_Relevant" Type="Edm.Boolean"/>
+<Property Name="Nomination_Relevant" Type="Edm.Boolean"/>
+<Property Name="Balancing_Relevant" Type="Edm.Boolean"/>
+<Property Name="Allocation_Relevant" Type="Edm.Boolean"/>
+<Property Name="Billing_Relevant" Type="Edm.Boolean"/>
+<Property Name="Price_Relevant" Type="Edm.Boolean"/>
+</EntityType>
+<EntityType Name="Contract_TypeSet">
+<Key>
+<PropertyRef Name="Auart"/>
+</Key>
+<Property Name="Auart" Type="Edm.String" MaxLength="4" Nullable="false"/>
+<Property Name="Spras" Type="Edm.String" MaxLength="2" Nullable="false"/>
+<Property Name="Bezei" Type="Edm.String" MaxLength="20" Nullable="false"/>
+</EntityType>
+<EntityType Name="Storage_LocSet">
+<Key>
+<PropertyRef Name="Lgort"/>
+</Key>
+<Property Name="Lgort" Type="Edm.String" MaxLength="4" Nullable="false"/>
+</EntityType>
+<EntityType Name="TransportSet">
+<Key>
+<PropertyRef Name="Tsyst"/>
+</Key>
+<Property Name="Tsyst" Type="Edm.String" MaxLength="10" Nullable="false"/>
+<Property Name="Tsnam" Type="Edm.String" MaxLength="60" Nullable="false"/>
+</EntityType>
+<EntityType Name="UOMSet">
+<Key>
+<PropertyRef Name="Msehi"/>
+</Key>
+<Property Name="Msehi" Type="Edm.String" MaxLength="3" Nullable="false"/>
+</EntityType>
+<EntityType Name="Sales_OrgSet">
+<Key>
+<PropertyRef Name="Vkorg"/>
+</Key>
+<Property Name="Vkorg" Type="Edm.String" MaxLength="4" Nullable="false"/>
+</EntityType>
+<EntityType Name="Ship_To_PartySet">
+<Key>
+<PropertyRef Name="Kunnr"/>
+</Key>
+<Property Name="Kunnr" Type="Edm.String" MaxLength="10" Nullable="false"/>
+</EntityType>
+<EntityType Name="Sold_To_PartySet">
+<Key>
+<PropertyRef Name="Kunnr"/>
+</Key>
+<Property Name="Kunnr" Type="Edm.String" MaxLength="10" Nullable="false"/>
+</EntityType>
+<EntityType Name="MaterialSet">
+<Key>
+<PropertyRef Name="Matnr"/>
+</Key>
+<Property Name="Matnr" Type="Edm.String" MaxLength="40" Nullable="false"/>
+</EntityType>
+<EntityType Name="PlantSet">
+<Key>
+<PropertyRef Name="Werks"/>
+</Key>
+<Property Name="Werks" Type="Edm.String" MaxLength="4" Nullable="false"/>
+<Property Name="Matnr" Type="Edm.String" MaxLength="40" Nullable="false"/>
+</EntityType>
+<EntityType Name="Sales_ContractSet">
+<Key>
+<PropertyRef Name="Vbeln"/>
+</Key>
+<Property Name="Vbeln" Type="Edm.String" MaxLength="10" Nullable="false"/>
+</EntityType>
+<EntityType Name="LocationPointSet">
+<Key>
+<PropertyRef Name="Locid"/>
+</Key>
+<Property Name="Locid" Type="Edm.String" MaxLength="10" Nullable="false"/>
+<Property Name="Loctyp" Type="Edm.String" MaxLength="4" Nullable="false"/>
+<Property Name="Locnam" Type="Edm.String" MaxLength="60" Nullable="false"/>
+</EntityType>
+<EntityType Name="DivisionSet">
+<Key>
+<PropertyRef Name="Spart"/>
+</Key>
+<Property Name="Spart" Type="Edm.String" MaxLength="2" Nullable="false"/>
+</EntityType>
+<EntityType Name="Dist_ChannelSet">
+<Key>
+<PropertyRef Name="Vtweg"/>
+</Key>
+<Property Name="Vtweg" Type="Edm.String" MaxLength="2" Nullable="false"/>
+</EntityType>
+<EntityType Name="LocationSet">
+<Key>
+<PropertyRef Name="Pblnr"/>
+</Key>
+<Property Name="Pblnr" Type="Edm.String" MaxLength="10" Nullable="false"/>
+<Property Name="Name1" Type="Edm.String" MaxLength="35" Nullable="false"/>
+</EntityType>
+<EntityType Name="A_SalesContract">
+<Key>
+<PropertyRef Name="SalesContract"/>
+</Key>
+<Property Name="SalesContract" Type="Edm.String" MaxLength="10" Nullable="false"/>
+<Property Name="SalesContractType" Type="Edm.String" MaxLength="4"/>
+<Property Name="SalesOrganization" Type="Edm.String" MaxLength="4"/>
+<Property Name="DistributionChannel" Type="Edm.String" MaxLength="2"/>
+<Property Name="OrganizationDivision" Type="Edm.String" MaxLength="2"/>
+<Property Name="SalesGroup" Type="Edm.String" MaxLength="3"/>
+<Property Name="SalesOffice" Type="Edm.String" MaxLength="4"/>
+<Property Name="SalesDistrict" Type="Edm.String" MaxLength="6"/>
+<Property Name="SoldToParty" Type="Edm.String" MaxLength="10"/>
+<Property Name="CreationDate" Type="Edm.Date"/>
+<Property Name="CreatedByUser" Type="Edm.String" MaxLength="12"/>
+<Property Name="LastChangeDate" Type="Edm.Date"/>
+<Property Name="LastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+<Property Name="PurchaseOrderByCustomer" Type="Edm.String" MaxLength="35"/>
+<Property Name="CustomerPurchaseOrderType" Type="Edm.String" MaxLength="4"/>
+<Property Name="CustomerPurchaseOrderDate" Type="Edm.Date"/>
+<Property Name="SalesContractDate" Type="Edm.Date"/>
+<Property Name="TotalNetAmount" Type="Edm.Decimal" Scale="3" Precision="16"/>
+<Property Name="TransactionCurrency" Type="Edm.String" MaxLength="5"/>
+<Property Name="SDDocumentReason" Type="Edm.String" MaxLength="3"/>
+<Property Name="PricingDate" Type="Edm.Date"/>
+<Property Name="IncotermsClassification" Type="Edm.String" MaxLength="3"/>
+<Property Name="IncotermsTransferLocation" Type="Edm.String" MaxLength="28"/>
+<Property Name="IncotermsLocation1" Type="Edm.String" MaxLength="70"/>
+<Property Name="IncotermsLocation2" Type="Edm.String" MaxLength="70"/>
+<Property Name="IncotermsVersion" Type="Edm.String" MaxLength="4"/>
+<Property Name="CustomerPaymentTerms" Type="Edm.String" MaxLength="4"/>
+<Property Name="PaymentMethod" Type="Edm.String" MaxLength="1"/>
+<Property Name="SalesContractValidityStartDate" Type="Edm.Date"/>
+<Property Name="SalesContractValidityEndDate" Type="Edm.Date"/>
+<Property Name="SalesContractValidityPerdUnit" Type="Edm.String" MaxLength="1"/>
+<Property Name="SalesContractValidityPerdCat" Type="Edm.String" MaxLength="2"/>
+<Property Name="SalesContractSignedDate" Type="Edm.Date"/>
+<Property Name="NmbrOfSalesContractValdtyPerd" Type="Edm.String" MaxLength="3"/>
+<Property Name="SalesContractFollowUpAction" Type="Edm.String" MaxLength="4"/>
+<Property Name="SlsContractFollowUpActionDate" Type="Edm.Date"/>
+<Property Name="ContractManualCompletion" Type="Edm.String" MaxLength="1"/>
+<Property Name="ReferenceSDDocument" Type="Edm.String" MaxLength="10"/>
+<Property Name="ReferenceSDDocumentCategory" Type="Edm.String" MaxLength="4"/>
+<Property Name="OverallSDProcessStatus" Type="Edm.String" MaxLength="1"/>
+<Property Name="TotalCreditCheckStatus" Type="Edm.String" MaxLength="1"/>
+<Property Name="OverallSDDocumentRejectionSts" Type="Edm.String" MaxLength="1"/>
+<NavigationProperty Name="to_Item" Type="Collection(Catelog.A_SalesContractItem)"/>
+<NavigationProperty Name="to_Partner" Type="Collection(Catelog.A_SalesContractPartner)"/>
+<NavigationProperty Name="to_PricingElement" Type="Collection(Catelog.A_SalesContractPrcgElmnt)"/>
+</EntityType>
+<EntityType Name="A_SalesContractItem">
+<Key>
+<PropertyRef Name="SalesContract"/>
+<PropertyRef Name="SalesContractItem"/>
+</Key>
+<Property Name="SalesContract" Type="Edm.String" MaxLength="10" Nullable="false"/>
+<Property Name="SalesContractItem" Type="Edm.String" MaxLength="6" Nullable="false"/>
+<Property Name="HigherLevelItem" Type="Edm.String" MaxLength="6"/>
+<Property Name="SalesContractItemCategory" Type="Edm.String" MaxLength="4"/>
+<Property Name="SalesContractItemText" Type="Edm.String" MaxLength="40"/>
+<Property Name="PurchaseOrderByCustomer" Type="Edm.String" MaxLength="35"/>
+<Property Name="Material" Type="Edm.String" MaxLength="40"/>
+<Property Name="MaterialByCustomer" Type="Edm.String" MaxLength="35"/>
+<Property Name="PricingDate" Type="Edm.Date"/>
+<Property Name="RequestedQuantity" Type="Edm.Decimal" Scale="3" Precision="15"/>
+<Property Name="RequestedQuantityUnit" Type="Edm.String" MaxLength="3"/>
+<Property Name="ItemGrossWeight" Type="Edm.Decimal" Scale="3" Precision="15"/>
+<Property Name="ItemNetWeight" Type="Edm.Decimal" Scale="3" Precision="15"/>
+<Property Name="ItemWeightUnit" Type="Edm.String" MaxLength="3"/>
+<Property Name="ItemVolume" Type="Edm.Decimal" Scale="3" Precision="15"/>
+<Property Name="ItemVolumeUnit" Type="Edm.String" MaxLength="3"/>
+<Property Name="OutlineAgreementTargetAmount" Type="Edm.Decimal" Scale="3" Precision="14"/>
+<Property Name="TransactionCurrency" Type="Edm.String" MaxLength="5"/>
+<Property Name="NetAmount" Type="Edm.Decimal" Scale="3" Precision="16"/>
+<Property Name="MaterialGroup" Type="Edm.String" MaxLength="9"/>
+<Property Name="MaterialPricingGroup" Type="Edm.String" MaxLength="2"/>
+<Property Name="Batch" Type="Edm.String" MaxLength="10"/>
+<Property Name="ProductionPlant" Type="Edm.String" MaxLength="4"/>
+<Property Name="StorageLocation" Type="Edm.String" MaxLength="4"/>
+<Property Name="ShippingPoint" Type="Edm.String" MaxLength="4"/>
+<Property Name="IncotermsClassification" Type="Edm.String" MaxLength="3"/>
+<Property Name="IncotermsTransferLocation" Type="Edm.String" MaxLength="28"/>
+<Property Name="IncotermsLocation1" Type="Edm.String" MaxLength="70"/>
+<Property Name="IncotermsLocation2" Type="Edm.String" MaxLength="70"/>
+<Property Name="CustomerPaymentTerms" Type="Edm.String" MaxLength="4"/>
+<Property Name="SalesDocumentRjcnReason" Type="Edm.String" MaxLength="2"/>
+<Property Name="ItemBillingBlockReason" Type="Edm.String" MaxLength="2"/>
+<Property Name="WBSElement" Type="Edm.String" MaxLength="24"/>
+<Property Name="ProfitCenter" Type="Edm.String" MaxLength="10"/>
+<Property Name="ReferenceSDDocument" Type="Edm.String" MaxLength="10"/>
+<Property Name="ReferenceSDDocumentItem" Type="Edm.String" MaxLength="6"/>
+<Property Name="SDProcessStatus" Type="Edm.String" MaxLength="1"/>
+<Property Name="SalesContractValidityStartDate" Type="Edm.Date"/>
+<Property Name="SalesContractValidityEndDate" Type="Edm.Date"/>
+<Property Name="NmbrOfSalesContractValdtyPerd" Type="Edm.String" MaxLength="3"/>
+<Property Name="SalesContractValidityPerdUnit" Type="Edm.String" MaxLength="1"/>
+<Property Name="SalesContractValidityPerdCat" Type="Edm.String" MaxLength="2"/>
+<Property Name="SalesContractSignedDate" Type="Edm.Date"/>
+<Property Name="SalesContractFollowUpAction" Type="Edm.String" MaxLength="4"/>
+<Property Name="SlsContractFollowUpActionDate" Type="Edm.Date"/>
+<Property Name="RequirementSegment" Type="Edm.String" MaxLength="40"/>
+<NavigationProperty Name="to_Partner" Type="Collection(Catelog.A_SalesContractItemPartner)"/>
+<NavigationProperty Name="to_PricingElement" Type="Collection(Catelog.A_SalesContractItemPrcgElmnt)"/>
+<NavigationProperty Name="to_SalesContract" Type="Catelog.A_SalesContract"/>
+</EntityType>
+<EntityType Name="A_SalesContractItemPartner">
+<Key>
+<PropertyRef Name="SalesContract"/>
+<PropertyRef Name="SalesContractItem"/>
+<PropertyRef Name="PartnerFunction"/>
+</Key>
+<Property Name="SalesContract" Type="Edm.String" MaxLength="10" Nullable="false"/>
+<Property Name="SalesContractItem" Type="Edm.String" MaxLength="6" Nullable="false"/>
+<Property Name="PartnerFunction" Type="Edm.String" MaxLength="2" Nullable="false"/>
+<Property Name="Customer" Type="Edm.String" MaxLength="10"/>
+<Property Name="Supplier" Type="Edm.String" MaxLength="10"/>
+<Property Name="Personnel" Type="Edm.String" MaxLength="8"/>
+<Property Name="ContactPerson" Type="Edm.String" MaxLength="10"/>
+<NavigationProperty Name="to_SalesContract" Type="Catelog.A_SalesContract"/>
+<NavigationProperty Name="to_SalesContractItem" Type="Catelog.A_SalesContractItem"/>
+</EntityType>
+<EntityType Name="A_SalesContractItemPrcgElmnt">
+<Key>
+<PropertyRef Name="SalesContract"/>
+<PropertyRef Name="SalesContractItem"/>
+<PropertyRef Name="PricingProcedureStep"/>
+<PropertyRef Name="PricingProcedureCounter"/>
+</Key>
+<Property Name="SalesContract" Type="Edm.String" MaxLength="10" Nullable="false"/>
+<Property Name="SalesContractItem" Type="Edm.String" MaxLength="6" Nullable="false"/>
+<Property Name="PricingProcedureStep" Type="Edm.String" MaxLength="3" Nullable="false"/>
+<Property Name="PricingProcedureCounter" Type="Edm.String" MaxLength="3" Nullable="false"/>
+<Property Name="ConditionType" Type="Edm.String" MaxLength="4"/>
+<Property Name="PricingDateTime" Type="Edm.String" MaxLength="14"/>
+<Property Name="ConditionCalculationType" Type="Edm.String" MaxLength="3"/>
+<Property Name="ConditionBaseValue" Type="Edm.Decimal" Scale="9" Precision="24"/>
+<Property Name="ConditionRateValue" Type="Edm.Decimal" Scale="9" Precision="24"/>
+<Property Name="ConditionCurrency" Type="Edm.String" MaxLength="5"/>
+<Property Name="ConditionQuantity" Type="Edm.Decimal" Scale="0" Precision="5"/>
+<Property Name="ConditionQuantityUnit" Type="Edm.String" MaxLength="3"/>
+<Property Name="ConditionCategory" Type="Edm.String" MaxLength="1"/>
+<Property Name="ConditionIsForStatistics" Type="Edm.Boolean"/>
+<Property Name="PricingScaleType" Type="Edm.String" MaxLength="1"/>
+<Property Name="IsRelevantForAccrual" Type="Edm.Boolean"/>
+<Property Name="CndnIsRelevantForInvoiceList" Type="Edm.String" MaxLength="1"/>
+<Property Name="ConditionOrigin" Type="Edm.String" MaxLength="1"/>
+<Property Name="IsGroupCondition" Type="Edm.String" MaxLength="1"/>
+<Property Name="ConditionRecord" Type="Edm.String" MaxLength="10"/>
+<Property Name="ConditionSequentialNumber" Type="Edm.String" MaxLength="3"/>
+<Property Name="TaxCode" Type="Edm.String" MaxLength="2"/>
+<Property Name="WithholdingTaxCode" Type="Edm.String" MaxLength="2"/>
+<Property Name="CndnRoundingOffDiffAmount" Type="Edm.Decimal" Scale="3" Precision="6"/>
+<Property Name="ConditionAmount" Type="Edm.Decimal" Scale="3" Precision="16"/>
+<Property Name="TransactionCurrency" Type="Edm.String" MaxLength="5"/>
+<Property Name="ConditionControl" Type="Edm.String" MaxLength="1"/>
+<Property Name="ConditionInactiveReason" Type="Edm.String" MaxLength="1"/>
+<Property Name="ConditionClass" Type="Edm.String" MaxLength="1"/>
+<Property Name="PrcgProcedureCounterForHeader" Type="Edm.String" MaxLength="3"/>
+<Property Name="FactorForConditionBasisValue" Type="Edm.Double"/>
+<Property Name="StructureCondition" Type="Edm.String" MaxLength="1"/>
+<Property Name="PeriodFactorForCndnBasisValue" Type="Edm.Double"/>
+<Property Name="PricingScaleBasis" Type="Edm.String" MaxLength="3"/>
+<Property Name="ConditionScaleBasisValue" Type="Edm.Decimal" Scale="9" Precision="24"/>
+<Property Name="ConditionScaleBasisUnit" Type="Edm.String" MaxLength="3"/>
+<Property Name="ConditionScaleBasisCurrency" Type="Edm.String" MaxLength="5"/>
+<Property Name="CndnIsRelevantForIntcoBilling" Type="Edm.Boolean"/>
+<Property Name="ConditionIsManuallyChanged" Type="Edm.Boolean"/>
+<Property Name="ConditionIsForConfiguration" Type="Edm.Boolean"/>
+<Property Name="VariantCondition" Type="Edm.String" MaxLength="26"/>
+<NavigationProperty Name="to_SalesContract" Type="Catelog.A_SalesContract"/>
+<NavigationProperty Name="to_SalesContractItem" Type="Catelog.A_SalesContractItem"/>
+</EntityType>
+<EntityType Name="A_SalesContractPartner">
+<Key>
+<PropertyRef Name="SalesContract"/>
+<PropertyRef Name="PartnerFunction"/>
+</Key>
+<Property Name="SalesContract" Type="Edm.String" MaxLength="10" Nullable="false"/>
+<Property Name="PartnerFunction" Type="Edm.String" MaxLength="2" Nullable="false"/>
+<Property Name="Customer" Type="Edm.String" MaxLength="10"/>
+<Property Name="Supplier" Type="Edm.String" MaxLength="10"/>
+<Property Name="Personnel" Type="Edm.String" MaxLength="8"/>
+<Property Name="ContactPerson" Type="Edm.String" MaxLength="10"/>
+<NavigationProperty Name="to_SalesContract" Type="Catelog.A_SalesContract"/>
+</EntityType>
+<EntityType Name="A_SalesContractPrcgElmnt">
+<Key>
+<PropertyRef Name="SalesContract"/>
+<PropertyRef Name="PricingProcedureStep"/>
+<PropertyRef Name="PricingProcedureCounter"/>
+</Key>
+<Property Name="SalesContract" Type="Edm.String" MaxLength="10" Nullable="false"/>
+<Property Name="PricingProcedureStep" Type="Edm.String" MaxLength="3" Nullable="false"/>
+<Property Name="PricingProcedureCounter" Type="Edm.String" MaxLength="3" Nullable="false"/>
+<Property Name="ConditionType" Type="Edm.String" MaxLength="4"/>
+<Property Name="PricingDateTime" Type="Edm.String" MaxLength="14"/>
+<Property Name="ConditionCalculationType" Type="Edm.String" MaxLength="3"/>
+<Property Name="ConditionBaseValue" Type="Edm.Decimal" Scale="9" Precision="24"/>
+<Property Name="ConditionRateValue" Type="Edm.Decimal" Scale="9" Precision="24"/>
+<Property Name="ConditionCurrency" Type="Edm.String" MaxLength="5"/>
+<Property Name="ConditionQuantity" Type="Edm.Decimal" Scale="0" Precision="5"/>
+<Property Name="ConditionQuantityUnit" Type="Edm.String" MaxLength="3"/>
+<Property Name="ConditionCategory" Type="Edm.String" MaxLength="1"/>
+<Property Name="ConditionIsForStatistics" Type="Edm.Boolean"/>
+<Property Name="PricingScaleType" Type="Edm.String" MaxLength="1"/>
+<Property Name="ConditionOrigin" Type="Edm.String" MaxLength="1"/>
+<Property Name="IsGroupCondition" Type="Edm.String" MaxLength="1"/>
+<Property Name="ConditionRecord" Type="Edm.String" MaxLength="10"/>
+<Property Name="ConditionSequentialNumber" Type="Edm.String" MaxLength="3"/>
+<Property Name="TaxCode" Type="Edm.String" MaxLength="2"/>
+<Property Name="WithholdingTaxCode" Type="Edm.String" MaxLength="2"/>
+<Property Name="CndnRoundingOffDiffAmount" Type="Edm.Decimal" Scale="3" Precision="6"/>
+<Property Name="ConditionAmount" Type="Edm.Decimal" Scale="3" Precision="16"/>
+<Property Name="TransactionCurrency" Type="Edm.String" MaxLength="5"/>
+<Property Name="ConditionControl" Type="Edm.String" MaxLength="1"/>
+<Property Name="ConditionInactiveReason" Type="Edm.String" MaxLength="1"/>
+<Property Name="ConditionClass" Type="Edm.String" MaxLength="1"/>
+<Property Name="PrcgProcedureCounterForHeader" Type="Edm.String" MaxLength="3"/>
+<Property Name="FactorForConditionBasisValue" Type="Edm.Double"/>
+<Property Name="StructureCondition" Type="Edm.String" MaxLength="1"/>
+<Property Name="PeriodFactorForCndnBasisValue" Type="Edm.Double"/>
+<Property Name="PricingScaleBasis" Type="Edm.String" MaxLength="3"/>
+<Property Name="ConditionScaleBasisValue" Type="Edm.Decimal" Scale="9" Precision="24"/>
+<Property Name="ConditionScaleBasisUnit" Type="Edm.String" MaxLength="3"/>
+<Property Name="ConditionScaleBasisCurrency" Type="Edm.String" MaxLength="5"/>
+<Property Name="CndnIsRelevantForIntcoBilling" Type="Edm.Boolean"/>
+<Property Name="ConditionIsManuallyChanged" Type="Edm.Boolean"/>
+<Property Name="ConditionIsForConfiguration" Type="Edm.Boolean"/>
+<Property Name="VariantCondition" Type="Edm.String" MaxLength="26"/>
+<NavigationProperty Name="to_SalesContract" Type="Catelog.A_SalesContract"/>
+</EntityType>
+</Schema>
+</edmx:DataServices>
+</edmx:Edmx>

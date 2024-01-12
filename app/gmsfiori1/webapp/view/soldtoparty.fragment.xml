@@ -1,0 +1,21 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+
+    <SelectDialog
+        id="mySelectDia"
+        noDataText="No Products Found"
+        title="Select sold to party"
+        search="onValueHelpSearch12"
+        confirm="onValueHelpClose1"
+        cancel="onValueHelpClose1"
+        items="{/Sold_To_PartySet}">
+        <StandardListItem id="_IDGenStanddLtem"
+            title="{Kunnr}"
+            description="{Kunnr}"
+       
+            iconDensityAware="false"
+            iconInset="false"
+            type="Active" />
+    </SelectDialog>
+</core:FragmentDefinition>
