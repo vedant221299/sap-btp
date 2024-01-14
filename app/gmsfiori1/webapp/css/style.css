@@ -29,4 +29,8 @@
 .border{
     border-bottom: 1px solid black;
 }
-
+.GSA2_height{
+    height: 600px !important;
+    overflow-y: scroll !important;
+    width: 100% !important;
+}

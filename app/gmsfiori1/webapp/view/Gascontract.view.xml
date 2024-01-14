@@ -18,13 +18,13 @@
    	<GenericTile id="_IDGenGenericTile3" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Display Gas Contracts"
 		 press="displaycontract">
 		<TileContent id="_IDGenTileContent3" >
-			<ImageContent id="_IDGenImageContent3" src="https://www.shutterstock.com/image-vector/glasses-icon-vector-260nw-731508667.jpg" />
+			<ImageContent id="_IDGenImageContent3" src="sap-icon://display-more" />
 		</TileContent>
 	</GenericTile>
    	<GenericTile id="_IDGenGenericTile4" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Validate Gas Contracts"
 		 press="gen">
 		<TileContent id="_IDGenTileContent4" >
-			<ImageContent id="_IDGenImageContent4" src="sap-icon://decision" />
+			<ImageContent id="_IDGenImageContent4" src="sap-icon://validate" />
 		</TileContent>
 	</GenericTile>
 </mvc:View>

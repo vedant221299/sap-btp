@@ -12,8 +12,8 @@
     "@sap-cloud-sdk/connectivity": "^3.10.0",
     "@sap-cloud-sdk/http-client": "^3.10.0",
     "@sap-cloud-sdk/resilience": "^3.10.0",
-    "@sap/cds": "^7",
-    "@sap/cds-dk": "^7.5.0",
+    "@sap/cds": "^7.5.2",
+    "@sap/cds-dk": "^7.5.1",
     "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
     "express": "^4"
   },
@@ -32,13 +32,13 @@
         "model": "srv/external/ZGMS_VALUE_HELP_SRV",
         "[production]": {
           "credentials": {
-            "destination": "ingenxserver",
+            "destination": "mydata",
             "path": "/sap/opu/odata/sap/ZGMS_VALUE_HELP_SRV"
           }
         },
         "[development]": {
           "credentials": {
-            "destination": "SandboxPo",
+            "destination": "sandbox",
             "path": "/sap/opu/odata/sap/ZGMS_VALUE_HELP_SRV"
           }
         }
@@ -50,13 +50,13 @@
         "csrfInBatch": true,
         "[production]": {
           "credentials": {
-            "destination": "ingxserv",
+            "destination": "mydata",
             "path": "/sap/opu/odata/sap/API_SALES_CONTRACT_SRV"
           }
         },
         "[development]": {
           "credentials": {
-            "destination": "SandboxPo",
+            "destination": "sandbox",
             "path": "/sap/opu/odata/sap/API_SALES_CONTRACT_SRV"
           }
         }

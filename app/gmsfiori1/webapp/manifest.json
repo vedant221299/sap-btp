@@ -142,22 +142,13 @@
         },
         {
           "name": "RouteView5",
-          "pattern": "CGC",
-          "layout": "TwoColumnsMidExpanded",
+          "pattern": "tile3",
+          "layout": "OneColumn",
           "target": [
-            "TargetView5",
-            "TargetView6"
+            "TargetView5"
           ]
         },
-        {
-          "name": "RouteView6",
-          "pattern": "CGChome",
-          "layout": "TwoColumnsMidExpanded",
-          "target": [
-            "TargetView5",
-            "TargetView6"
-          ]
-        },
+       
         {
           "name": "RouteView7",
           "pattern": "createNom",
@@ -240,6 +231,14 @@
           "target": [
             "TargetView15"
           ]
+        },
+        {
+          "name": "RouteView16",
+          "pattern": "CGChome",
+          "layout": "OneColumn",
+          "target": [
+            "TargetView16"
+          ]
         }
       ],
       "targets": {
@@ -271,19 +270,12 @@
           "viewId": "nomtiles",
           "viewName": "nomtiles"
         },
-        "TargetView5": {
+        "TargetView5":{
           "viewType": "XML",
           "transition": "slide",
           "controlAggregation": "beginColumnPages",
-          "viewId": "CGC",
-          "viewName": "CGC"
-        },
-        "TargetView6": {
-          "viewType": "XML",
-          "transition": "slide",
-          "controlAggregation": "midColumnPages",
-          "viewId": "CGChome",
-          "viewName": "CGChome"
+          "viewId": "tile3",
+          "viewName": "tile3"
         },
         "TargetView7": {
           "viewType": "XML",
@@ -347,7 +339,15 @@
           "controlAggregation": "beginColumnPages",
           "viewId": "serviceP",
           "viewName": "serviceP"
+        },
+        "TargetView16": {
+          "viewType": "XML",
+          "transition": "slide",
+          "controlAggregation": "beginColumnPages",
+          "viewId": "CGChome",
+          "viewName": "CGChome"
         }
+
       }
     },
     "rootView": {

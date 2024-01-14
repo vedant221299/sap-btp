@@ -4,13 +4,21 @@
     <Page id="page" title="GAS MANAGEMENT SYSTEM" titleAlignment="Center">
     
       
-	<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"  header="Configuration" press="Onconfig">
 
+    <GenericTile id="_IDGenGenericTile2" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Create" press="onCreate">
+		<TileContent id="_IDGenTileContent48" >
+			<ImageContent id="_IDGenImageContent49" src="sap-icon://create" />
+		</TileContent>
 	</GenericTile>
 
-	<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Create" press="onCreate">
-		
+
+	<GenericTile id="_IDGenGenericTile1" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"  header="Configuration" press="Onconfig">
+         <TileContent id="_IDGenTileContent4" >
+			<ImageContent id="_IDGenImageContent4" src="sap-icon://settings" />
+		</TileContent>   
 	</GenericTile>
+
+	
 
 
     </Page>

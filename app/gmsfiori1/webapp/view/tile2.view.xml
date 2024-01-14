@@ -2,10 +2,7 @@
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
   <OverflowToolbar id="_IDGenOverflowToolbar1" >
- <Toolbar id="_IDGenToolbar1" >
- <ToolbarSpacer width="400px"></ToolbarSpacer>
- <Title id="_IDGenTitle1" text="Ingenx Gas management Solution"></Title>
- </Toolbar>
+ 
     <!-- <Text text="Ingenx Gas management Solution" textAlign="Center" ></Text> -->
   </OverflowToolbar>
   	<GenericTile id="_IDGenGenericTile1" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Gas Contracting"
@@ -41,7 +38,7 @@
   	<GenericTile id="_IDGenGenericTile6" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Gas Reporting"
 		 press="press10">
 		<TileContent id="_IDGenTileContent6" >
-			<ImageContent id="_IDGenImageContent6" src="https://cdn.iconscout.com/icon/free/png-256/free-checklist-2646574-2201004.png?f=webp" />
+			<ImageContent id="_IDGenImageContent6" src="sap-icon://request" />
 		</TileContent>
 	</GenericTile>
 </mvc:View>

@@ -1,1 +1,0 @@
-using Catelog as service from '../../srv/service';
