@@ -1,3 +1,5 @@
+
+
 sap.ui.define(
     [
         "sap/ui/core/mvc/Controller",
@@ -19,6 +21,11 @@ sap.ui.define(
 
 
         onInit: function() {
+          let testModel=new JSONModel({
+            gsa:true,
+            gta:false
+          })
+          this.getView().setModel(testModel,'test')
           let nomDataModel = new JSONModel()
                 let arrNom = {
                   "SalesContract": "",
@@ -99,7 +106,14 @@ sap.ui.define(
               }
                 nomDataModel.setData(arrNom)
                 this.getView().setModel(nomDataModel, 'sharedModel')
+
       //     
+        },
+        onToggle:function(){
+            let testModel= this.getView().getModel('test');
+            testModel.getData().gsa = !testModel.getData().gsa;
+            testModel.getData().gta = !testModel.getData().gsa;
+            testModel.refresh();
         },
         onSoldtoparty() {
           // create dialog lazilyz
@@ -123,6 +137,19 @@ sap.ui.define(
 
         oEvent.getSource().getBinding("items").filter([oFilter]);
       },
+
+      onDoc(){
+        // create dialog lazilyz
+        console.log("click")
+        var oView = this.getView();
+        if (!this._oTankInfoDial) {
+          this._oTankInfoDial = sap.ui.xmlfragment(oView.getId(), "gmsfiori.view.docu", this);
+          oView.addDependent(this._oTankInfoDial);
+        }
+        // var oTankModel = new sap.ui.model.json.JSONModel();  
+        // this._oTankInfoDialog.setModel(oTankModel);
+        this._oTankInfoDial.open();    
+       },
       
       onValueHelpClose: function(oEvent) {
         var oSelectedItem = oEvent.getParameter("selectedItem");
@@ -146,6 +173,7 @@ sap.ui.define(
    
         this.byId("Soldtp_id").setValue(oSelectedItem.getTitle());
     },
+
       onShiptpoo() {
         // create dialog lazily
         // create dialog lazilyz
@@ -561,6 +589,7 @@ sap.ui.define(
      
           this.byId("Plant_id").setValue(oSelectedItem.getTitle());
       },
+     
         // onTrans: function (oEvent) {
         //   let oTable = new sap.m.Table({
         //     fixedLayout: false,

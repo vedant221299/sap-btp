@@ -1,0 +1,21 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+
+    <SelectDialog
+        id="Doc"
+        noDataText="No Products Found"
+        title="Division"
+        search="onValueHelpSearchsaledoc"
+        confirm="onValueHelpClosedoc"
+        cancel="onValueHelpClosedoc"
+        items="{/Contract_TypeSet}">
+        <StandardListItem id="_IDGenStandardListItem"
+            title="{Auart}"
+            description="{Auart}"
+       
+            iconDensityAware="false"
+            iconInset="false"
+            type="Active" />
+    </SelectDialog>
+</core:FragmentDefinition>

@@ -142,7 +142,7 @@
         },
         {
           "name": "RouteView5",
-          "pattern": "tile3",
+          "pattern": "CGChome",
           "layout": "OneColumn",
           "target": [
             "TargetView5"
@@ -274,8 +274,8 @@
           "viewType": "XML",
           "transition": "slide",
           "controlAggregation": "beginColumnPages",
-          "viewId": "tile3",
-          "viewName": "tile3"
+          "viewId": "CGChome",
+          "viewName": "CGChome"
         },
         "TargetView7": {
           "viewType": "XML",

@@ -1,62 +1,15 @@
 <mvc:View
-    controllerName="gmsfiori.controller.CGChome"
+    controllerName="gmsfiori.controller.test"
+    xmlns:html="http://www.w3.org/1999/xhtml"
     xmlns:mvc="sap.ui.core.mvc"
-    busyIndicatorDelay="0"
     displayBlock="true"
-    xmlns:form="sap.ui.layout.form"
-    xmlns:core="sap.ui.core"
-    xmlns="sap.m"
     xmlns:f="sap.f"
+    xmlns="sap.m"
     xmlns:tnt="sap.tnt"
+    xmlns:form="sap.ui.layout.form"
+     xmlns:core="sap.ui.core"
 >
-    <Label id="_IDGenL"  text="Document Type:"/>
-    <Input id="Doctype" width="200px" showValueHelp="true" valueHelpRequest="onDoc" value="{sharedModel>/Doc}" />
-    <Button text="toggle" press="onToggle"></Button>
-     
-    <f:DynamicPage id="dynamicPageId"
-            stickySubheaderProvider="iconTabBar"
-            class="sapUiNoContentPadding"
-            >
-            <!-- DynamicPage Title -->
-            <f:title>
-                <f:DynamicPageTitle id="_IDGenDynamicPageTitle1">
-                    <f:heading>
-                        <Title id="_IDGenTitle12" text="GSA"/>
-                    </f:heading>
-                    <f:expandedContent>
-                        <Label id="_IDGenLabel1" text="Gas Sales Agreement"/>
-                    </f:expandedContent>
-                    <!-- <f:actions>
-                        <Button text="Edit" type="Emphasized"/>
-                        <Button text="Delete" type="Transparent"/>
-                        <Button text="Copy" type="Transparent"/>
-                        <Button text="Toggle Footer" type="Transparent" press="onToggleFooter"/>
-                        <Button icon="sap-icon://action" type="Transparent"/>
-                    </f:actions> -->
-                    <f:navigationActions>
-                        <Button id="_IDGenButton1" icon="sap-icon://full-screen" type="Transparent" />
-                        <Button id="_IDGenButton2" icon="sap-icon://decline" type="Transparent" />
-                    </f:navigationActions>
-                </f:DynamicPageTitle>
-            </f:title>
-            <!-- DynamicPage Header -->
-            <!-- <f:header>
-                <f:DynamicPageHeader pinnable="true">
-                    <layout:HorizontalLayout allowWrapping="true">
-                        <layout:VerticalLayout class="sapUiMediumMarginEnd">
-                            <ObjectAttribute title="Info" text="Test"/>
-                            <ObjectAttribute title="Info" text="Test2"/>
-                            <ObjectAttribute title="Info" text="Test3"/>
-                        </layout:VerticalLayout>
- 
-                        <layout:VerticalLayout>
-                            <ObjectAttribute title="Availability"/>
-                            <ObjectStatus text="In Stock" state="Success" />
-                        </layout:VerticalLayout>
-                    </layout:HorizontalLayout>
-                </f:DynamicPageHeader>
-            </f:header> -->
-            <f:content>
+<Page id="_IDGenPage1" showHeader="false"  >
                 <IconTabBar id="iconTabBar" class="sapUiResponsiveContentPadding">
                     <items>
                         <IconTabFilter id="_IDGenIconTabFilter1" text="Header Details">
@@ -150,42 +103,39 @@
                                 </form:toolbar>
                                 <form:content  >
                                     <core:Title id="_IDGenTitle3" />
+                                    <Label id="_IDGenLabel1111"  text="Service Type"/>
+                                    <Input id="_IDGenInput12121"  width="200px" />
+                                   
+                                    <Label id="_IDGenLabel129"  text="Service Level"/>
+                                    <Input id="_IDGenInput120"  width="200px" />
                                    
                                     <Label id="_IDGenLabel136" text="Rank " />
                                     <Input id="_IDGenInput138" width="200px" />
                                    
                                     <Label id="_IDGenLabel142"  text="DCQ" />
                                     <Input id="_IDGenInput14"  width="200px" />
-
-                                    <Label id="_IDGenLabel151"  text="MDCQ " />
-                                    <Input id="_IDGenInput15"  width="200px" />
-
-                                    <Label id="_IDGenLabel16"  text="mDCQ" />
-                                    <Input id="_IDGenInput16"  width="200px" />
-
-                                    <Label id="_IDGen1209"  text="Fuel Provider" />
-                                    <Input id="_IDGenInp1o"  width="200px" />   
-
-                                    <Label id="_IDGen13123"  text="Fuel%" />
-                                    <Input id="_IDGenInp599"  width="50px" />  
  
                                     <core:Title id="_IDGenTitle4" />
-                                    
+                                    <Label id="_IDGenLabel151"  text="MDCQ " />
+                                    <Input id="_IDGenInput15"  width="200px" />
  
-                                    <Label id="_IDGenLabel17"  text="AACQ" />
+                                    <Label id="_IDGenLabel16"  text="MCQ" />
+                                    <Input id="_IDGenInput16"  width="200px" />
+ 
+                                    <Label id="_IDGenLabel17"  text="ACQ" />
                                     <Input id="_IDGenInput17"  width="200px" />
-
-                                    <Label id="_IDGenLabel1711222"  text="Take or Pay%" />
-                                    <Input id="_IDGenInput17212222"  width="50px" /> 
-
-                                    <Label id="_IDGe123"  text="Under Run%" />
-                                    <Input id="_IDGenInput890"  width="50px" />      
-
-                                    <Label id="_IDGen1789"  text="Early Termination Charges%" />
-                                    <Input id="_IDGenInp098"  width="50px" /> 
-                                   
-                                   <Label id="_IDGenLabe"  text="Over Run%" />
-                                    <Input id="_IDGenInpu"  width="50px" /> 
+ 
+                                    <!-- <Label id="_IDGenLabel18"  text="Take or pay " />
+                                    <RadioButtonGroup id="rbg2" columns="2" selectedIndex="2">
+                                        <RadioButton id="RB2-1" text="Yes"/>
+                                        <RadioButton id="RB2-2" text="No" />
+                                    </RadioButtonGroup> -->
+ 
+                                    <!-- <Label id="_IDGenLabel19"  text="Overun Allowed" />
+                                    <RadioButtonGroup id="rbg3" columns="2" selectedIndex="2">
+                                        <RadioButton id="RB2-3" text="Yes"/>
+                                        <RadioButton id="RB2-4" text="No" />
+                                    </RadioButtonGroup> -->
                                 </form:content>    
                             </form:SimpleForm>
                             <form:SimpleForm id="_IDGenSimpleForm4" class="GSA2_height">
@@ -197,57 +147,47 @@
                             </form:toolbar>
                             <form:content  >
                                     <core:Title id="_IDGenTitle6" />
-                                    
+                                    <Label id="_IDGenLabel11111"  text="Service Type"/>
+                                    <Input id="_IDGenInput110"  width="200px" />
                                    
+                                    <Label id="_IDGenLabel1291"  text="Service Level"/>
+                                    <Input id="_IDGenInput1231"  width="200px" />
                                    
                                     <Label id="_IDGenLabel1367" text="Rank " />
                                     <Input id="_IDGenInput13" width="200px" />
                                    
                                     <Label id="_IDGenLabel14678"  text="DCQ" />
                                     <Input id="_IDGenInput14567"  width="200px" />
-
-                                     <Label id="_IDGenLabel150"  text="MDCQ " />
-                                    <Input id="_IDGenInput1511"  width="200px" />
- 
-                                    <Label id="_IDGenLabel160999"  text="mDCQ" />
-                                    <Input id="_IDGenInput167777"  width="200px" />
-
-                                    <Label id="_IDGen12"  text="Fuel Provider" />
-                                    <Input id="_IDGenInp1"  width="200px" />   
-
-                                    <Label id="_IDGen13"  text="Fuel%" />
-                                    <Input id="_IDGenInp5"  width="50px" />  
  
                                     <core:Title id="_IDGenTitle7" />
-                                   
+                                    <Label id="_IDGenLabel150"  text="MDCQ " />
+                                    <Input id="_IDGenInput1511"  width="200px" />
  
-                                    <Label id="_IDGenLabel17112"  text="AACQ" />
+                                    <Label id="_IDGenLabel160999"  text="MCQ" />
+                                    <Input id="_IDGenInput167777"  width="200px" />
+ 
+                                    <Label id="_IDGenLabel17112"  text="ACQ" />
                                     <Input id="_IDGenInput17212"  width="200px" />
-
-                                    <Label id="_IDGenLabel171122"  text="Take or Pay%" />
-                                    <Input id="_IDGenInput1721222"  width="50px" />  
-
-                                    <Label id="_IDGenLabel"  text="Under Run%" />
-                                    <Input id="_IDGenInput"  width="50px" />  
-
-                                    <Label id="_IDGe"  text="Early Termination Charges%" />
-                                    <Input id="_IDGenInput172122"  width="50px" />      
-
-                                    <Label id="_IDGen1"  text="Over Run%" />
-                                    <Input id="_IDGenInp"  width="50px" />  
-
-                                                             
-                                    
+ 
+                                    <!-- <Label id="_IDGenLabel18211"  text="Take or pay " />
+                                    <RadioButtonGroup id="_IDGenRadioButtonGroup1" columns="2" selectedIndex="2">
+                                        <RadioButton id="_IDGenRadioButton1" text="Yes"/>
+                                        <RadioButton id="_IDGenRadioButton2" text="No" />
+                                    </RadioButtonGroup> -->
+ 
+                                    <!-- <Label id="_IDGenLabel1921"  text="Overun Allowed" />
+                                    <RadioButtonGroup id="_IDGenRadioButtonGroup2" columns="2" selectedIndex="2">
+                                        <RadioButton id="_IDGenRadioButton3" text="Yes"/>
+                                        <RadioButton id="_IDGenRadioButton4" text="No" />
+                                    </RadioButtonGroup> -->
                                 </form:content>
                             </form:SimpleForm>
                         </IconTabFilter>
                     </items>
                 </IconTabBar>
-                <!-- <Panel id="Panel1">
-                <mvc:XMLView id="testv1" viewName="gmsfiori.view.test" height="50vh" visible="{test>/gsa}"></mvc:XMLView>
-                <mvc:XMLView id="testv2" viewName="gmsfiori.view.test2" height="50vh" visible="{test>/gta}"></mvc:XMLView>
-                </Panel> -->
-            </f:content>
-           
-        </f:DynamicPage>
+
+
+</Page>
+
+    
 </mvc:View>
